@@ -42,4 +42,6 @@ def test_form_filling():
         'Krasnodar',
         'Haryana Karnal'
     )
-    model.pages.practice_form.click_close_button()
+
+
+    practice_form.click_close_button()

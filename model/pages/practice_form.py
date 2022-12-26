@@ -1,11 +1,11 @@
 from selene.support.shared import browser
 from selene import be, have
-from model.controls import datepicker,dropdown
-from model.utils import file_path,scroll
+from model.controls import datepicker, dropdown
+from model.utils import file_path, scroll
 
 
 def open():
-    browser.open('/automation-practice-form').driver.maximize_window()
+    browser.open('/automation-practice-form')
 
 
 def type_firstname(firstname):
@@ -76,11 +76,12 @@ def select_city(city):
 
 
 def click_submit():
-  browser.element('#submit').press_enter()
+    browser.element('#submit').press_enter()
 
 
 def assert_info(*args):
     browser.element('.table').all('.table td:nth-child(2)').should(have.texts(args))
+
 
 def click_close_button():
     scroll.scroll_to('#closeLargeModal')
