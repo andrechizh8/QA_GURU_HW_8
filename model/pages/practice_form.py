@@ -1,6 +1,6 @@
 from selene.support.shared import browser
 from selene import be, have
-from model.controls import datepicker, dropdown
+from model.controls import datepicker, dropdown,check_box,radio_button
 from model.utils import file_path, scroll
 
 
@@ -21,7 +21,7 @@ def type_email(email):
 
 
 def select_gender(gender):
-    browser.all('[name=gender]').element_by(have.value(gender)).element('..').click()
+    radio_button.gender('[name=gender]',gender)
 
 
 def type_phone_number(phone):
@@ -29,7 +29,7 @@ def type_phone_number(phone):
 
 
 def select_hobby(hobby):
-    browser.element('hobbiesWrapper').element(have.value(hobby)).click()
+    check_box.hobby('[for^=hobbies-checkbox]',hobby)
 
 
 def type_address(address):
